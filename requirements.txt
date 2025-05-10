@@ -1,0 +1,12 @@
+# Core CrewAI package
+crewai
+
+# Optional tools for agents
+crewai[tools]
+
+# Optional embeddings support
+crewai[embeddings]
+
+# Additional dependencies for troubleshooting
+# Uncomment if needed
+# tiktoken
