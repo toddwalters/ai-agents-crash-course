@@ -2,10 +2,7 @@
 crewai
 
 # Optional tools for agents
-crewai[tools]
-
-# Optional embeddings support
-crewai[embeddings]
+crewai-tools
 
 # Additional dependencies for troubleshooting
 # Uncomment if needed
