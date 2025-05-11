@@ -7,3 +7,6 @@ crewai-tools
 # Additional dependencies for troubleshooting
 # Uncomment if needed
 # tiktoken
+
+# Add IPython for Markdown display in Jupyter Notebook
+ipython
