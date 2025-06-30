@@ -1,13 +1,11 @@
 {
   "name": "ai-agent-crash-course-env",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "features": {
-    "ghcr.io/devcontainers/features/dotenv:1": {}
-  },
   "forwardPorts": [11434],
-//  "mounts": [
-//    "source=${localWorkspaceFolder}/models,target=/workspace/models,type=bind"
-//  ],
+  "runArgs": ["--env-file", ".env"],
+  "mounts": [
+    "source=${localWorkspaceFolder}/models,target=/workspace/models,type=bind"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
