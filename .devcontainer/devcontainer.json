@@ -4,6 +4,7 @@
   "forwardPorts": [11434],
   "runArgs": ["--env-file", ".env"],
   "mounts": [
+    "source=${localWorkspaceFolder}/build,target=/workspace/build,type=bind",
     "source=${localWorkspaceFolder}/models,target=/workspace/models,type=bind"
   ],
   "customizations": {
@@ -11,9 +12,15 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "esbenp.prettier-vscode"
-      ]
+        "ms-python.pylint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "jupyter.askForKernelRestart": false
+      }
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt"
 }

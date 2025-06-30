@@ -7,9 +7,15 @@ crewai
 # Optional tools for agents
 crewai-tools
 
-# Additional dependencies for troubleshooting
-# Uncomment if needed
-# tiktoken
+# YAML parsing for configuration files
+pyyaml
+
+# OpenAI API client (required for GPT models)
+openai
 
 # Add IPython for Markdown display in Jupyter Notebook
 ipython
+
+# Additional dependencies for troubleshooting
+# Uncomment if needed
+# tiktoken
