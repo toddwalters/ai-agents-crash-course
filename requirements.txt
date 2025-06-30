@@ -16,6 +16,9 @@ openai
 # Add IPython for Markdown display in Jupyter Notebook
 ipython
 
+# IPython kernel for Jupyter notebooks
+ipykernel
+
 # Additional dependencies for troubleshooting
 # Uncomment if needed
 # tiktoken
