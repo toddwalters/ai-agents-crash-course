@@ -19,6 +19,9 @@ ipython
 # IPython kernel for Jupyter notebooks
 ipykernel
 
+# Jupyter Notebook support
+ipywidgets
+
 # Additional dependencies for troubleshooting
 # Uncomment if needed
 # tiktoken
