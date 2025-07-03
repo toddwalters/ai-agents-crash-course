@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Installer logs
+env/
+venv/
+ENV/
+.env
+.venv
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS resource forks
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.swn
+*.bak
+*.tmp
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Test coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Pyre
+.pyre/
+
+# Profiling data
+.prof
+
+# Logs
+*.log
+
+# Local environment variables
+.env
+.env.*
