@@ -1,0 +1,31 @@
+# Pylint configuration for AI Agents Crash Course utilities
+# Place this file in the repository root as .pylintrc
+
+[MASTER]
+# Add paths to search for modules
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+# Disable specific warnings that are acceptable in this codebase
+disable=
+    # Allow broad exception catching for utility functions that need to handle various provider errors
+    broad-except,
+    # Allow unused imports in example files
+    unused-import,
+    # Allow f-strings without interpolation for consistency
+    f-string-without-interpolation
+
+[FORMAT]
+# Maximum line length
+max-line-length=88
+
+[BASIC]
+# Allow single-letter variable names in loops and comprehensions
+good-names=i,j,k,e,f,_
+
+[DESIGN]
+# Maximum number of arguments for function/method
+max-args=10
+
+# Maximum number of local variables for function/method body
+max-locals=20

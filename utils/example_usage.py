@@ -18,6 +18,8 @@ sys.path.append(repo_root)
 # Now we can import the utilities
 try:
     from utils.env_check import check_environment_variables
+    # Import test_llm_connection but only reference it in documentation
+    # pylint: disable=unused-import
     from utils.llm_connection_test import test_llm_connection
     print("✅ Successfully imported utilities from central utils directory!")
 

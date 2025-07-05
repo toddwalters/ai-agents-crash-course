@@ -5,12 +5,17 @@ This module provides comprehensive testing functionality for various LLM provide
 including OpenAI, Ollama, Anthropic, Google, and others.
 """
 
-import requests
 import os
+from typing import Any
+import requests
 
 
-def test_llm_connection(llm):
-    """Test LLM connection regardless of provider"""
+def test_llm_connection(llm: Any) -> None:
+    """Test LLM connection regardless of provider
+
+    Args:
+        llm: The LLM object to test (typically from CrewAI)
+    """
 
     print("=== LLM Configuration Analysis ===")
 
@@ -57,7 +62,7 @@ def test_llm_connection(llm):
             else:
                 print(
                     f"Ollama server responded with status: {response.status_code}")
-        except Exception as e:
+        except (requests.RequestException, requests.Timeout, ConnectionError) as e:
             print(f"❌ Ollama server connection failed: {e}")
 
     elif provider == "openai":
@@ -82,7 +87,7 @@ def test_llm_connection(llm):
         print("Generic provider - will test with LLM call only")
 
     # Universal LLM functionality test
-    print(f"\n=== LLM Functionality Test ===")
+    print("=== LLM Functionality Test ===")
     try:
         test_response = llm.call(
             [{"role": "user", "content": "Respond with exactly: 'Test successful'"}])
@@ -97,7 +102,7 @@ def test_llm_connection(llm):
         else:
             print(f"Response: {str(test_response)[:100]}...")
 
-    except Exception as e:
+    except (ConnectionError, TimeoutError, ValueError, RuntimeError, ImportError, AttributeError) as e:
         print(f"❌ LLM call failed: {e}")
         print(f"Error type: {type(e).__name__}")
 
@@ -109,3 +114,15 @@ def test_llm_connection(llm):
             print("💡 Tip: Check API key configuration and permissions")
         elif "model" in error_str or "not found" in error_str:
             print("💡 Tip: Verify model name and availability")
+    except Exception as e:  # pylint: disable=broad-except
+        # Fallback for any other unexpected exceptions
+        print(f"❌ Unexpected LLM call error: {e}")
+        print(f"Error type: {type(e).__name__}")
+        print("💡 Tip: This might be a provider-specific error. Check the LLM provider documentation.")
+
+
+if __name__ == "__main__":
+    print("LLM Connection Test module")
+    print("This module provides the test_llm_connection() function.")
+    print("Usage: from utils.llm_connection_test import test_llm_connection")
+    print("Then call: test_llm_connection(your_llm_object)")

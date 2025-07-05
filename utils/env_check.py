@@ -8,7 +8,7 @@ for all major LLM providers.
 import os
 
 
-def check_environment_variables():
+def check_environment_variables() -> None:
     """Check environment variables for all major LLM providers"""
 
     print("=== Environment Variables Status ===")
@@ -54,3 +54,7 @@ def check_environment_variables():
         print("Make sure to set the appropriate API keys for your chosen provider.")
     else:
         print(f"\nConfigured providers: {', '.join(found_providers)}")
+
+
+if __name__ == "__main__":
+    check_environment_variables()
